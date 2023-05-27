@@ -1,0 +1,88 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    box-sizing: border-box;
+    background-color: rgb(218, 196, 196);
+  
+  } 
+  /*  --------------------Wheather fetch------------------------ */
+  
+  .box{
+    background-color: aquamarine;
+    width: 450px;
+    height: 650px;
+    
+    margin:  80px auto;
+    padding: 20px;
+    border: 5px solid white;
+    border-radius: 20px;
+  
+  }
+  .box h1{
+    margin: 20px 30px;
+  }
+  input{
+    width: 80%;
+    height: 45px;
+    border: 1px solid rgb(5, 189, 186);
+    border-radius: 20px;
+    margin: 20px 40px;
+    padding: 15px;
+    background-color:white;
+  }
+  button{
+    width: 80px;
+    height: 44px;
+    position: relative;
+    bottom: 64px;
+    left: 280px;
+   border: none;
+   background-color: rgb(5, 104, 104);
+   color: white;
+   border-radius: 15px;
+   /* display: none; */
+  }
+  
+  
+  /* input:focus~button{
+    display: block;
+  } */
+  
+  .wheather-report{
+    background-color: aquamarine;
+    width: 100%;
+    height: auto;
+    /* border-radius: 90%; */
+    position: relative;
+    top: 80px;
+    color: rgb(5, 5, 98);
+  }
+  .details 
+  {   
+    background-color: aquamarine;
+    z-index: 1000;
+    text-align: center;
+    height: auto;
+  }
+  .wheather-report span{
+    font-size :100px;
+    background-color: transparent;
+    position: relative;
+    top: -100px;
+    left: 120px;
+  }
+  .wheather-report h1{
+   background-color: aquamarine;
+    font-size: 45px;
+    text-align: center;
+  }
+  .details h3{
+    font-size: 35px;
+  }
+  
+  .details p{
+    font-size: 20px;
+  }  
