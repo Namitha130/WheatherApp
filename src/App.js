@@ -10,7 +10,6 @@ function App() {
         // e.preventDefault();
       
         const cityName = city.current.value;
-        // console.log(cityName);
         setDisplayCity(cityName)
         //console.log(city);
         const url = `https://ai-weather-by-meteosource.p.rapidapi.com/find_places?text=${city.current.value}&language=en`;
