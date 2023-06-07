@@ -1,14 +1,12 @@
 import { useRef, useState } from "react";
-
 function App() {
-
   let [details , setDetails] = useState();
    let [cityDisplay , setDisplayCity] = useState();
     let city = useRef();
 
     const handleSearch = (e) =>{
-        // e.preventDefault();
-        // alert("i'm working")
+        e.preventDefault();
+      
         const cityName = city.current.value;
         setDisplayCity(cityName)
         //console.log(city);
@@ -33,8 +31,6 @@ function App() {
                    // return console.log(v.lat);
                 }
             })  
-        
-
         // wheather forecast endpoint
         const url = `https://ai-weather-by-meteosource.p.rapidapi.com/current?lat=${data[0].lat}&lon=${data[0].lon}&timezone=auto&language=en&units=auto`;
         const options= {
@@ -91,12 +87,9 @@ function App() {
                     <p>Wind chill</p>
                 </div>
             </div>
-        </div>
-        
+        </div>       
        }
-        
-            
-       </section>
+      </section>
   );
 }
 
