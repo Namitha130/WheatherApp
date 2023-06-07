@@ -8,7 +8,7 @@ function App() {
 
     const handleSearch = (e) =>{
         // e.preventDefault();
-      
+        // alert("i'm working")
         const cityName = city.current.value;
         setDisplayCity(cityName)
         //console.log(city);
@@ -29,8 +29,8 @@ function App() {
             data.filter((v,i) => {   
                 if( i === 0)
                 {
-                    //  return console.log(v.place_id); 
-                    //return console.log(v.lat);
+                     return console.log(v.place_id);
+                   // return console.log(v.lat);
                 }
             })  
         
@@ -48,15 +48,21 @@ function App() {
         .then( (res) =>{ return res.json()})
         .then((d) =>{ 
             console.log(d);
-           setDetails(d.current)
-        })
+        
+          setDetails(d.current);
+            // setDetails(d);
+           console.log(" wind speed: "+d.current.wind.speed);
+        });
+        
     })
     }
   return (
     <section className="app">
         <div className="search">
-            <input type="text" placeholder="enter location" ref={city}/>
-            <button onClick={()=>handleSearch()}> Check </button>
+            <input type="text" placeholder="Enter location" ref={city}/>
+            <button onClick={()=>handleSearch()}> check </button>
+           
+            {/* <button onClick={()=>handleSearch()}> &#x1F50E; </button> */}
         </div>
        {       details != null &&
             <div className="container">
@@ -81,36 +87,15 @@ function App() {
                     <p>Humidity</p>
                 </div>
                 <div className="wind">
-                    <p className='bold'> {details.wind_speed} mph </p>
-                    <p>Wind Speed</p>
+                    <p className='bold'> {details.wind_chill} mph </p>
+                    <p>Wind chill</p>
                 </div>
             </div>
         </div>
         
        }
         
-            {/* <div className="box">
-                <input type="text" placeholder="Enter city name" ref={city} />
-                <button onClick={()=>handleSearch()}> Check </button>
-
-                    <div className="wheather-report">
-                    <span class="material-symbols-outlined">
-                        partly_cloudy_day
-                        </span>
-                        <h1> {cityDisplay}</h1>
-                    
-                {  details != null &&
-                    <div className="details">   
-
-                        <h3> {details.temperature} °cel </h3>
-                        <p> humidity:{details.humidity} ,pressure: {details.pressure}</p>
-                        
-                        
-                    </div>
-                    
-                }
-                 </div>
-            </div> */}
+            
        </section>
   );
 }
