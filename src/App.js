@@ -4,8 +4,8 @@ function App() {
    let [cityDisplay , setDisplayCity] = useState();
     let city = useRef();
 
-    const handleSearch = (e) =>{
-        e.preventDefault();
+    const handleSearch = () =>{
+        // e.preventDefault();
       
         const cityName = city.current.value;
         setDisplayCity(cityName)
@@ -22,16 +22,7 @@ function App() {
         .then((res) => { return res.json()})
         .then( (data) =>{
             setDetails(data);
-            // console.log(data);  
-           // console.log(data.lat);
-            data.filter((v,i) => {   
-                if( i === 0)
-                {
-                     return console.log(v.place_id);
-                   // return console.log(v.lat);
-                }
-            })  
-        // wheather forecast endpoint
+           
         const url = `https://ai-weather-by-meteosource.p.rapidapi.com/current?lat=${data[0].lat}&lon=${data[0].lon}&timezone=auto&language=en&units=auto`;
         const options= {
         method: 'GET',
@@ -46,7 +37,7 @@ function App() {
             console.log(d);
         
           setDetails(d.current);
-            // setDetails(d);
+
            console.log(" wind speed: "+d.current.wind.speed);
         });
         
@@ -58,7 +49,7 @@ function App() {
             <input type="text" placeholder="Enter location" ref={city}/>
             <button onClick={()=>handleSearch()}> check </button>
            
-            {/* <button onClick={()=>handleSearch()}> &#x1F50E; </button> */}
+            
         </div>
        {       details != null &&
             <div className="container">
